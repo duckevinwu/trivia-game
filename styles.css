@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --paleGreen: #5cc593;
+  --pastelRed: #ff6961; 
+}
+
+* {
+  word-break: break-word;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+div {
+  padding: 0;
+  margin: 0;
+}
+
+.preloader-container {
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader {
+  height: 200px;
+  width: 200px;
+}
+
+.game-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to top right, #8A2BE2, #EE82EE);
+  top: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.game-container.hide {
+  top: 100%;
+  height: 0;
+}
+
+.stat-container {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hs-text {
+  color: white;
+  font-size: 24px;
+}
+
+.body-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  width: 375px;
+  min-width: 375px;
+  min-height: 600px;
+  height: 85%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-bar {
+  display: flex;
+  width: 100%;
+}
+
+.streak-container {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.streak-icon {
+  font-size: 18px;
+  color: gray;
+}
+
+.streak-text {
+  font-size: 16px;
+  padding-left: 3px;
+  color: gray;
+}
+.score-container {
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.score-icon {
+  font-size: 18px;
+  color: gray;
+}
+
+.score-text {
+  font-size: 16px;
+  padding-left: 3px;
+  color: gray;
+}
+
+.category-container {
+  padding-top: 50px;
+  text-transform: uppercase;
+  color: gray;
+  letter-spacing: 2px;
+}
+
+.category-text {
+  font-size: 14px;
+}
+
+.question-container {
+  padding-top: 16px;
+}
+
+.question-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.options-container {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* radio button styling */
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  border: 1px solid gray;
+  border-color: gray;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+}
+
+input[type="radio"] + label:hover {
+  background-color: #cdb7f6;
+  border-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* appearance for checked radiobutton */
+input[type="radio"]:checked + label {
+  background-color: #cdb7f6;
+  border-color: white;
+  color: black;
+}
+
+.correct {
+  -webkit-animation: green 2s ease;
+  -moz-animation: green 2s ease;
+  -ms-animation: green 2s ease;
+  -o-animation: green 2s ease;
+  animation: green 2s ease;
+}
+
+.wrong {
+  -webkit-animation: red 2s ease;
+  -moz-animation: red 2s ease;
+  -ms-animation: red 2s ease;
+  -o-animation: red 2s ease;
+  animation: red 2s ease;
+}
+
+/* correct animation */
+@-webkit-keyframes green {
+  50% { background-color: var(--paleGreen); }
+  100% { background-color: var(--paleGreen); }
+}
+
+@-moz-keyframes green {
+  50% { background-color: var(--paleGreen); }
+  100% { background-color: var(--paleGreen); }
+}
+
+@-ms-keyframes green {
+  50% { background-color: var(--paleGreen); }
+  100% { background-color: var(--paleGreen); }
+}
+
+@-o-keyframes green {
+  50% { background-color: var(--paleGreen); }
+  100% { background-color: var(--paleGreen); }
+}
+
+@keyframes green {
+  50% { background-color: var(--paleGreen); }
+  100% { background-color: var(--paleGreen); }
+}
+
+/* wrong animation */
+@-webkit-keyframes red {
+  50% { background-color: var(--pastelRed); }
+  100% { background-color: var(--pastelRed); }
+}
+
+@-moz-keyframes red {
+  50% { background-color: var(--pastelRed); }
+  100% { background-color: var(--pastelRed); }
+}
+
+@-ms-keyframes red {
+  50% { background-color: var(--pastelRed); }
+  100% { background-color: var(--pastelRed); }
+}
+
+@-o-keyframes red {
+  50% { background-color: var(--pastelRed); }
+  100% { background-color: var(--pastelRed); }
+}
+
+@keyframes red {
+  50% { background-color: var(--pastelRed); }
+  100% { background-color: var(--pastelRed); }
+}
+
+/* utility classes */
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.right-align {
+  justify-content: flex-end;
+}
+
+.center-v {
+  align-items: center;
+}
+
+.bottom-v {
+  align-items: flex-end;
+}
+
+.center-h {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
